@@ -20,7 +20,11 @@
 // ==/UserScript==
 
 var mina = function () {
-
+  // 登陆页面的情况下，跳转至首页
+  if(window.location.href.startsWith('https://www.zhihu.com/signin')){
+    window.location.href='https://www.zhihu.com/explore'
+    return;
+  }
   // 这个脚本不对已经登录的做任何事情
   if (function isLogin() {
     return !document.querySelector('.js-signin-noauth');
